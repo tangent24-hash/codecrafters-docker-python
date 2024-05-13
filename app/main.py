@@ -21,7 +21,7 @@ def main():
             sys.exit(1)
 
         # Change root to the temporary directory
-        os.chroot(tmpdir)
+        os.chroot(tempdir)
 
         # Execute the command with the copied binary path
         completed_process = subprocess.run(
