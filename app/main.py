@@ -14,10 +14,12 @@ def main():
     completed_process = subprocess.run(
         [command, *args], capture_output=True, check=True)
 
+    return_code = completed_process.returncode
+
     sys.stderr.write(completed_process.stderr.decode("utf-8"))
 
     sys.stdout.write(completed_process.stdout.decode("utf-8"))
-    sys.exit(completed_process.returncode.decode("utf-8"))
+    sys.exit(return_code)
 
 
 if __name__ == "__main__":
