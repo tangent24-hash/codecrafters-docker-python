@@ -12,7 +12,7 @@ def main():
     args = sys.argv[4:]
     #
     completed_process = subprocess.run(
-        [command, *args], capture_output=True, check=True)
+        [command, *args], capture_output=True, check=False)
 
     return_code = completed_process.returncode
 
